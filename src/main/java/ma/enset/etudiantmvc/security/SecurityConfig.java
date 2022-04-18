@@ -58,6 +58,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http.formLogin();
         //ne nécessite pas une auth
         http.authorizeRequests().antMatchers("/").permitAll();
+        http.authorizeRequests().antMatchers("/images/**").permitAll();
         http.authorizeRequests().antMatchers("/admin/**").hasAnyAuthority("ADMIN");
         http.authorizeRequests().antMatchers("/user/**").hasAnyAuthority("USER");
         http.authorizeRequests().antMatchers("/webjars/**").permitAll();

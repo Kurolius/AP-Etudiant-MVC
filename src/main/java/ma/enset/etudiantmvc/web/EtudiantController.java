@@ -57,7 +57,7 @@ public class EtudiantController {
     }
 
     @GetMapping("/admin/formEtudiant")
-    public String formEtudiants(Model model){
+    public String formEtudiant(Model model){
         String keyword ="";
         int page = 0;
         model.addAttribute("etudiant",new Etudiant());

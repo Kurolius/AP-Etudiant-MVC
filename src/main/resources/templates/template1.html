@@ -16,6 +16,16 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
           integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
           crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <style>
+        #footer {
+            position:fixed;
+            left:0px;
+            bottom:0px;
+            height:60px;
+            width:100%;
+            background:#999;
+        }
+    </style>
 </head>
 <body>
 <!-- Grey with black text -->
@@ -26,7 +36,7 @@
                 <a class="nav-link active" th:href="@{/user/index}"><i class="fas fa-hospital-user"></i> Home</a>
             </li>
             <li class="nav-item" sec:authorize="hasAuthority('ADMIN')">
-                <a class="nav-link" th:href="@{/admin/formPatients}">Nouveau</a>
+                <a class="nav-link" th:href="@{/admin/formEtudiant}">Nouveau</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" th:href="@{/user/index}">Chercher</a>
@@ -51,11 +61,11 @@
 
     </div>
 </nav>
-<section layout:fragment="content1">
 
+<section layout:fragment="content1">
 </section>
 <section layout:fragment="content2">
-    <footer class="bg-light text-center text-white">
+    <footer id="footer" class="bg-dark text-center text-white">
         <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
             © 2020 Copyright:
             <a class="text-white" href="https://github.com/Kurolius">Majbar Yassine</a>
